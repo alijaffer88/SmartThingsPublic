@@ -13,7 +13,6 @@
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
  *
-
 -------v2.53.1-------------------
 -ln 210: enableManual string modified
 -ln 496: added code for old ST app zoneNumber number to convert to enum for app update compatibility
@@ -21,7 +20,6 @@
 -ln 863: weather scheduled if rain OR seasonal enabled, both off is no weather check scheduled
 -ln 1083: added sync check to manual start
 -ln 1538: corrected contact delay minimum fro 5s to 10s
-
 -------v2.52---------------------
  -Major revision by BAB
  *
@@ -1123,7 +1121,6 @@ def manualStart(evt){
                     if (mins == 1) s = ''
                     newString = "run time: ${hourString}${mins} minute${s}:\n"
                 }
-
                 note('active', "${app.label}: Manual run, watering in 1 minute: ${newString}${runNowMap}", 'd')                      
             }
             else note('skipping', "${app.label}: Manual run failed, check configuration", 'a')
@@ -1131,7 +1128,6 @@ def manualStart(evt){
     } 
     else note('skipping', "${app.label}: Manual run aborted, ${settings.switches.displayName} appears to be busy", 'a')
 }
-
 //true if another schedule is running
 boolean busy(){
 	// Check if we are already running, crashed or somebody changed the schedule time while this schedule is running
@@ -1324,7 +1320,6 @@ def checkRunMap(){
     	log.debug 'checkRunMap(): atomicState.run = false'  	// isWeather cancelled us out before we got started
     }
 }
-
 //get todays schedule
 def cycleLoop(int i)
 {
@@ -2631,4 +2626,3 @@ def zoneSetPage16(){
 	state.app = 16
     zoneSetPage()
     }
-
